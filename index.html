@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Mochammad Fickry Satria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #05060b 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgb(195, 208, 217);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px 40px;
+            text-align: center;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .greeting {
+            color: #080d22;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            color: #718096;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #2d3748;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #040106, #0e021a);
+            border-radius: 2px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px 0;
+            color: #052151;
+            font-size: 14px;
+        }
+
+        .contact-item strong {
+            color: #2d3748;
+            margin-right: 8px;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .contact-item a {
+            color: #03110f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #150922;
+            text-decoration: underline;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #03060f 0%, #07000d 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(1, 4, 17, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(44, 16, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .profile-image {
+                width: 130px;
+                height: 130px;
+            }
+
+            .tagline {
+                font-size: 14px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .contact-item strong {
+                text-align: center;
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .profile-image {
+                width: 110px;
+                height: 110px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .skill-item {
+                font-size: 13px;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .container {
+                max-width: 600px;
+            }
+
+            .card {
+                padding: 60px 50px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .profile-image {
+                width: 170px;
+                height: 170px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .skills {
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .skill-item {
+                flex: 1;
+                max-width: 150px;
+                padding: 15px 25px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="profile-image">
+                <img src="WhatsApp Image 2025-11-01 at 12.59.55_a987dd1d.jpg" alt="Foto Profil">
+            </div>
+
+            <p class="greeting">Halo! Saya</p>
+            <h1>Mochammad Fickry Satria</h1>
+            <p class="tagline">Saya seorang Mahasiswa pengembangan web yang bersemangat dalam dunia teknologi</p>
+
+            <div class="contact-info">
+                <h2 class="section-title">Kontak</h2>
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <a href="mailto:mochamadfickrys@gmail.com">mochamadfickrys@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Instagram:</strong>
+                    <a href=" target="_blank"></a>
+                </div>
+            </div>
+
+            <div class="skills">
+                <h2 class="section-title">Keahlian</h2>
+                <div class="skill-item">HTML & CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">UI/UX Design</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animasi skill items dengan delay
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 300 + (index * 100));
+            });
+
+            // Animasi contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(10px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 200 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>
